@@ -1,0 +1,23 @@
+using System;
+using System.Text.RegularExpressions;
+
+namespace _01.MatchFullName_Lab
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string pattern = @"\b[A-Z]{1}[a-z]{1,} [A-Z]{1}[a-z]{1,}\b";
+
+            string input = Console.ReadLine();
+
+            MatchCollection matchedNames = Regex.Matches(input, pattern);
+
+            foreach (Match match in matchedNames)
+            {
+                Console.Write(match.Value + " ");
+            }
+            Console.WriteLine();
+        }
+    }
+}
